@@ -1,0 +1,80 @@
+// COLORS
+$primary-color: #cc9b57;
+$primary-dark: rgba(204, 155, 87, 0.8);
+$primary-light: rgba(204, 155, 87, 0.8);
+
+$secondary-color: #4d4d4e;
+$hover-color: #ffd700;
+$background-color: #18181852;
+$background-color-light: #142534;
+$background-color-dark: rgba(0, 1, 23, 0.32);
+
+// FONT COLORS
+$fontColor: #ffffff;
+$font-icon-color: #4d4d4d;
+$font-color-light: #d9d9d9;
+$font-color-dark: #000000;
+$font-color-secondary: #4d4d4e;
+$font-color-secondary-light: #b3b3b3;
+
+// NightSKy
+$starFieldWidth: 2560;
+$starFieldHeight: 2560;
+$starStartOffset: 600px;
+
+$starOneScrollDuration: 100s;
+$starTwoScrollDuration: 125s;
+$starThreeScrollDuration: 175s;
+$numStarOneStars: 1700;
+$numStarTwoStars: 700;
+$numStarThreeStars: 200;
+$numComet: 10;
+
+// BRANDS COLORS
+$css3: #28a4d9;
+$HTML5: #f06529;
+$sass: #c69;
+$react: #5ed4f4;
+$javascript: #efd81d;
+$git: #ec4d28;
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spinCube {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: rotateY(-90deg) rotateZ(90deg);
+  }
+  33% {
+    transform: rotateY(-90deg) rotateX(90deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+  66% {
+    transform: rotateY(-270deg) rotateX(90deg);
+  }
+  83% {
+    transform: rotateX(90deg);
+  }
+}

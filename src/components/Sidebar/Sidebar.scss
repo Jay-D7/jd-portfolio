@@ -1,0 +1,141 @@
+@use '../../styles/variables';
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 165px;
+  height: 100vh;
+  min-height: 500px;
+  background-color: variables.$background-color-dark;
+  z-index: 3;
+
+  .logo {
+    display: block;
+    padding: 8px 0;
+    background-color: #142534;
+
+    img {
+      display: block;
+      margin: 8px auto;
+      width: 100%;
+      height: auto;
+
+      &.SubLogo {
+        width: 165px;
+      }
+    }
+  }
+
+  nav {
+    width: 100%;
+    display: block;
+    text-align: center;
+
+    a {
+      font-size: 22px;
+      color: variables.$primary-color;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+
+      svg {
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+      }
+
+      i {
+        transition: all 0.3s ease-out;
+      }
+
+      &:hover {
+        color: variables.$hover-color;
+        background-color: variables.$background-color-light;
+
+        svg {
+          opacity: 0;
+          -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 2px;
+        opacity: 0;
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+      }
+
+      &:first-child {
+        &::after {
+          content: 'HOME';
+        }
+      }
+
+      &.about-link {
+        &:after {
+          content: 'ABOUT';
+        }
+      }
+
+      &.contact-link {
+        &:after {
+          content: 'CONTACT';
+        }
+      }
+
+      &.portfolio-link {
+        &:after {
+          content: 'PORTFOLIO';
+        }
+      }
+
+      &.active {
+        svg {
+          color: variables.$hover-color;
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+
+    li {
+      a {
+        padding: 7px 0;
+        display: block;
+        font-size: 22px;
+        line-height: 16px;
+        color: variables.$primary-color;
+
+        &:hover {
+          color: variables.$secondary-color;
+          transition: all 0.3s ease-out;
+        }
+      }
+    }
+  }
+}
