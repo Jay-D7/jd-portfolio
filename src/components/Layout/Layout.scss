@@ -40,16 +40,15 @@
   }
 }
 
-.container.about-page {
+.about-page,
+.contact-page,
+.portfolio-page {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center; /* Center vertically */
   height: 100vh; /* Full viewport height */
-  display: flex;
   flex-direction: row;
-  align-items: center;
   /* width: 100%; */
-  justify-content: flex-start;
   overflow: hidden;
 
   .text-zone {
@@ -80,7 +79,7 @@
         font-size: 18px;
         color: variables.$hover-color;
         line-height: 18px;
-        opacity: 0.6;
+        animation: fadeIn 1s 1.7s backwards;
       }
 
       &:after {
@@ -93,7 +92,7 @@
         font-size: 18px;
         color: variables.$hover-color;
         line-height: 18px;
-        opacity: 0.6;
+        animation: fadeIn 1s 1.7s backwards;
       }
     }
 
