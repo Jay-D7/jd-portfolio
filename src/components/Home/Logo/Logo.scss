@@ -1,0 +1,31 @@
+@use '../../../styles/variables';
+
+.logoContainer {
+  position: relative; /* Ensure proper positioning for child elements */
+  width: 400px;
+  height: 609px;
+  margin-top: 50px;
+  margin-right: 100px;
+  overflow: hidden; /* Prevent content from overflowing */
+
+  svg {
+    width: variables.$basic-width;
+    height: auto;
+    bottom: 0;
+    transform: rotateZ(30deg) !important;
+  }
+
+  .solid-logo {
+    width: variables.$basic-width;
+    opacity: 0;
+    z-index: 1;
+    height: auto;
+    animation: fadeInRight 2.1s linear both;
+    animation-delay: 1.4s;
+  }
+}
+
+.svgContainer {
+  stroke: variables.$hover-color;
+  stroke-width: 10;
+}

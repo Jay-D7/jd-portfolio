@@ -1,0 +1,177 @@
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:list';
+@use '../../styles/variables';
+
+$starFieldWidth: 2560;
+$starFieldHeight: 2560;
+$starStartOffset: 600px;
+
+$starOneScrollDuration: 100s;
+$starTwoScrollDuration: 125s;
+$starThreeScrollDuration: 175s;
+$numStarOneStars: 1700;
+$numStarTwoStars: 700;
+$numStarThreeStars: 200;
+$numComet: 10;
+
+.stage-cube-cont {
+  width: 50%;
+  height: 100%;
+  top: 0;
+  padding-top: 18%;
+  margin-left: 0;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+
+  .cube-spinner {
+    animation-name: spinCube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    margin-left: calc(50% - 100px);
+
+    div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px 0px lightyellow;
+    }
+
+    .face1 {
+      transform: translateZ(100px);
+      color: variables.$sass;
+    }
+    .face2 {
+      transform: rotateY(90deg) translateZ(100px);
+      color: variables.$HTML5;
+    }
+    .face3 {
+      transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+      color: variables.$react;
+    }
+    .face4 {
+      transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+      color: variables.$javascript;
+    }
+    .face5 {
+      transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+      color: variables.$css3;
+    }
+    .face6 {
+      transform: rotateX(-90deg) translateZ(100px);
+      color: variables.$git;
+    }
+  }
+
+  .main-container {
+    display: block;
+    top: 50%;
+    left: 50%;
+    /* position: relative;
+    // width: 1200px;
+    // height: 600px;
+    // background: linear-gradient(to bottom, #201c2f 0%, #100751 100%);
+    // transform: translate(-50%, -50%); */
+  }
+
+  @function create-stars($n) {
+    $stars: ();
+
+    @for $i from 1 through $n {
+      $x: math.random($starFieldWidth);
+      $y: math.random($starFieldHeight);
+      $stars: list.append($stars, #{$x}px #{$y}px #fff, comma);
+    }
+
+    @return $stars; /* No need for unquote() */
+  }
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-#{variables.$starFieldHeight}px)
+        translateX(-#{variables.$starFieldWidth}px);
+    }
+  }
+
+  @keyframes animShootingStar {
+    from {
+      transform: translateY(0px) translateX(0px) rotate(-45deg);
+      opacity: 1;
+      height: 5px;
+    }
+    to {
+      transform: translateY(-#{variables.$starFieldHeight}px)
+        translateX(-#{variables.$starFieldWidth}px) rotate(-45deg);
+      opacity: 1;
+      height: 800px;
+    }
+  }
+
+  @mixin star-template($numStars, $starSize, $scrollSpeed) {
+    z-index: 10;
+    width: $starSize;
+    height: $starSize;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: create-stars($numStars);
+    animation: animStar $scrollSpeed linear infinite;
+    &:after {
+      content: ' ';
+      top: -$starStartOffset;
+      width: $starSize;
+      height: $starSize;
+      border-radius: 50%;
+      position: absolute;
+      background: transparent;
+      box-shadow: create-stars($numStars);
+    }
+  }
+
+  @mixin shooting-star-template($numStars, $starSize, $speed) {
+    z-index: 10;
+    width: $starSize;
+    height: $starSize + 80px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    );
+    animation: animShootingStar $speed linear infinite;
+  }
+
+  .stars {
+    @include star-template(
+      variables.$numStarOneStars,
+      1px,
+      variables.$starOneScrollDuration
+    );
+  }
+  .stars2 {
+    @include star-template($numStarTwoStars, 2px, $starTwoScrollDuration);
+  }
+  .stars3 {
+    @include star-template($numStarThreeStars, 3px, $starThreeScrollDuration);
+  }
+  .comet {
+    @include shooting-star-template($numComet, 5px, 10s);
+  }
+}

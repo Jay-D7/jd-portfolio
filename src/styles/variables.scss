@@ -1,4 +1,7 @@
-// COLORS
+/* Box-Model */
+$basic-width: 100%;
+
+/* COLORS */
 $primary-color: #cc9b57;
 $primary-dark: rgba(204, 155, 87, 0.8);
 $primary-light: rgba(204, 155, 87, 0.8);
@@ -9,7 +12,7 @@ $background-color: #18181852;
 $background-color-light: #142534;
 $background-color-dark: rgba(0, 1, 23, 0.32);
 
-// FONT COLORS
+/* FONT COLORS */
 $fontColor: #ffffff;
 $font-icon-color: #4d4d4d;
 $font-color-light: #d9d9d9;
@@ -17,7 +20,7 @@ $font-color-dark: #000000;
 $font-color-secondary: #4d4d4e;
 $font-color-secondary-light: #b3b3b3;
 
-// NightSKy
+/* NightSKy */
 $starFieldWidth: 2560;
 $starFieldHeight: 2560;
 $starStartOffset: 600px;
@@ -30,7 +33,7 @@ $numStarTwoStars: 700;
 $numStarThreeStars: 200;
 $numComet: 10;
 
-// BRANDS COLORS
+/* BRANDS COLORS */
 $css3: #28a4d9;
 $HTML5: #f06529;
 $sass: #c69;
