@@ -11,21 +11,22 @@ import {
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
 import Loader from 'react-loaders';
+import { dictionary } from '../../dictionary/dictionary';
+
+const cubeFaces = [
+  { className: 'face1', icon: faSass },
+  { className: 'face2', icon: faHtml5 },
+  { className: 'face3', icon: faReact },
+  { className: 'face4', icon: faJsSquare },
+  { className: 'face5', icon: faCss3Alt },
+  { className: 'face6', icon: faGitAlt },
+];
 
 export const About: React.FC = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
 
-  const str = `About Me`;
-  const strArray = [...str];
-
-  const cubeFaces = [
-    { className: 'face1', icon: faSass },
-    { className: 'face2', icon: faHtml5 },
-    { className: 'face3', icon: faReact },
-    { className: 'face4', icon: faJsSquare },
-    { className: 'face5', icon: faCss3Alt },
-    { className: 'face6', icon: faGitAlt },
-  ];
+  // const str = `About Me`;
+  // const strArray = [...str];
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -42,25 +43,14 @@ export const About: React.FC = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass} // Provide a valid CSS class name
-              strArray={strArray}
+              strArray={[...dictionary.aboutTitle]} // Use the correct key from the dictionary
               idx={10}
             />
           </h1>
 
-          <p>
-            I'm a very ambitious front-end developer looking for a role in an
-            established IT company with the opportunity to work with the latest
-            technologies on challenging and diverse projects.
-          </p>
-          <p>
-            I'm quiet confident, naturally curious, and perpetually working on
-            improving my chops one design problem at a time.
-          </p>
-          <p>
-            If I need to define myself in one sentence that would be a family
-            person, father of a beautiful daughter, a sports fanatic,
-            photography enthusiast, and tech-obsessed!!!
-          </p>
+          <p>{dictionary.aboutDescription}</p>
+          <p>{dictionary.aboutDescription2}</p>
+          <p>{dictionary.aboutDescription3}</p>
         </div>
 
         <div className="main-container">

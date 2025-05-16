@@ -9,8 +9,8 @@ import {
   faUser,
   faSuitcase,
   faEnvelope,
-  // faBars,
-  // faClose,
+  faBars,
+  faClose,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -18,53 +18,55 @@ import {
   faSlack,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { useState } from 'react';
+
+// / NavLinks
+const navLinks = [
+  { to: '/', icon: faHome, label: 'Home', className: '/' },
+  { to: '/about', icon: faUser, label: 'About', className: 'about-link' },
+  {
+    to: '/portfolio',
+    icon: faSuitcase,
+    label: 'Portfolio',
+    className: 'portfolio-link',
+  },
+  {
+    to: '/contact',
+    icon: faEnvelope,
+    label: 'Contact',
+    className: 'contact-link',
+  },
+];
+
+//SocialLinks
+const socialLinks = [
+  {
+    href: 'https://www.linkedin.com/in/dragowskijakub/',
+    icon: faLinkedin,
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://github.com/Jay-D7',
+    icon: faGithub,
+    label: 'GitHub',
+  },
+  {
+    href: 'https://www.youtube.com',
+    icon: faYoutube,
+    label: 'YouTube',
+  },
+  {
+    href: 'https://mr-robot-network.slack.com',
+    icon: faSlack,
+    label: 'Slack',
+  },
+];
 
 export const Sidebar = () => {
+  const [showNav, setShowNav] = useState(false);
   const getNavLinkClass = (isActive: boolean, baseClass: string) => {
     return `${isActive ? isActive + ' ' : ''}${baseClass || baseClass}`;
   };
-
-  // NavLinks
-  const navLinks = [
-    { to: '/', icon: faHome, label: 'Home', className: '/' },
-    { to: '/about', icon: faUser, label: 'About', className: 'about-link' },
-    {
-      to: '/portfolio',
-      icon: faSuitcase,
-      label: 'Portfolio',
-      className: 'portfolio-link',
-    },
-    {
-      to: '/contact',
-      icon: faEnvelope,
-      label: 'Contact',
-      className: 'contact-link',
-    },
-  ];
-
-  //SocialLinks
-  const socialLinks = [
-    {
-      href: 'https://www.linkedin.com',
-      icon: faLinkedin,
-      label: 'LinkedIn',
-    },
-    {
-      href: 'https://github.com/Jay-D7',
-      icon: faGithub,
-      label: 'GitHub',
-    },
-    {
-      href: 'https://www.youtube.com',
-      icon: faYoutube,
-      label: 'YouTube',
-    },
-    {
-      href: 'https://mr-robot-network.slack.com',
-      icon: faSlack,
-      label: 'Slack',
-    },
-  ];
 
   return (
     <div className="nav-bar">
@@ -77,17 +79,25 @@ export const Sidebar = () => {
         />
       </Link>
       {/* Nav */}
-      <nav className="showNav">
+      <nav className={showNav ? 'mobile-show' : ''}>
         {navLinks.map(({ to, icon, label, className }) => (
           <NavLink
             key={to}
             className={({ isActive }) => getNavLinkClass(isActive, className)}
             end
             to={to}
+            onClick={() => setShowNav(false)}
           >
             <FontAwesomeIcon icon={icon} aria-label={label} />
           </NavLink>
         ))}
+        <FontAwesomeIcon
+          onClick={() => setShowNav(false)}
+          icon={faClose}
+          color="#ffd700"
+          size="3x"
+          className="close-icon"
+        />
       </nav>
       {/* SocialLinks */}
       <ul className="social-links">
@@ -96,7 +106,7 @@ export const Sidebar = () => {
             <a
               href={href}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopenner"
               aria-label={label}
               title={label}
             >
@@ -108,6 +118,16 @@ export const Sidebar = () => {
           </li>
         ))}
       </ul>
+      {/* Hamburger Menu */}
+      <FontAwesomeIcon
+        onClick={() => setShowNav(!showNav)}
+        icon={faBars}
+        className="hamburger-icon"
+        aria-label="Hamburger Menu"
+        title="Hamburger Menu"
+        size="3x"
+        color="#4d4d4e"
+      />
     </div>
   );
 };

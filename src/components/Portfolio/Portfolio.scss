@@ -1,0 +1,63 @@
+@use '../../styles/variables';
+
+.portfolio-grid {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid variables.$hover-color;
+    background-color: variables.$primary-color;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .portfolio-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.portfolio-modal {
+  z-index: 1100; /* Ensure it's above the overlay */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.portfolio-modal-overlay {
+  z-index: 1000; /* Ensure it's above other elements */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

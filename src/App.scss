@@ -31,3 +31,9 @@ input,
 textarea {
   font-family: 'Helvetica Neue';
 }
+
+@media screen and (max-width: 1200px) {
+  .App {
+    height: auto;
+  }
+}
