@@ -93,8 +93,8 @@ export const Portfolio = () => {
                 setIsOpen(true);
                 e.stopPropagation();
               }}
-              // whileHover={{ scale: 1.1 }}
-              // whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               exit={{ scale: 0.9, opacity: 0 }}
             >
               <img src={project.image} alt={project.title} />
