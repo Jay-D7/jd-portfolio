@@ -4,6 +4,7 @@ import Loader from 'react-loaders';
 import { motion } from 'framer-motion';
 
 import project_2 from '../../assets/images/image2_2.png';
+import project_3 from '../../assets/images/image3.png';
 import project_1 from '../../assets/images/portfolio_jd.png';
 import { dictionary } from '../../dictionary/dictionary';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
@@ -36,7 +37,7 @@ export const Portfolio = () => {
       id: 3,
       title: dictionary.projectThird,
       description: dictionary.portfolioDescription3,
-      image: project_1,
+      image: project_3,
     },
     {
       id: 3,

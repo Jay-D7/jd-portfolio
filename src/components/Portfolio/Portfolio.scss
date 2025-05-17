@@ -57,6 +57,8 @@
 }
 
 .portfolio-modal {
+  display: flex;
+  flex-direction: column;
   width: 90%;
   max-width: 500px;
   padding: 20px;
@@ -64,6 +66,10 @@
   background: white;
   border-radius: 8px;
   z-index: 1100; /* Ensure it's above the overlay */
+
+  button {
+    align-self: center;
+  }
 }
 
 .portfolio-modal-overlay {
