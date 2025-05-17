@@ -67,7 +67,50 @@
   border-radius: 8px;
   z-index: 1100; /* Ensure it's above the overlay */
 
+  a {
+    text-decoration: none;
+    color: variables.$primary-color;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: variables.$secondary-color;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
   button {
+    background: variables.$primary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    &:hover {
+      background: variables.$secondary-color;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+    height: 40px;
     align-self: center;
   }
 }
