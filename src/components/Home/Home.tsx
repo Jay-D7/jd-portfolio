@@ -1,12 +1,13 @@
-import './Home.scss';
-import '../AnimatedLetters/AnimatedLetters.scss';
-import logoTitle from '../../assets/images/logo_jd_small.png';
-import { Logo } from './Logo/Logo';
-import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 import Loader from 'react-loaders';
+import { Link } from 'react-router-dom';
+
+import logoTitle from '../../assets/images/logo_jd_small.png';
 import { dictionary } from '../../dictionary/dictionary';
+import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
+import '../AnimatedLetters/AnimatedLetters.scss';
+import './Home.scss';
+import { Logo } from './Logo/Logo';
 
 export const Home: React.FC = () => {
   const [letterClass, setLetterClass] = useState('text-animate');

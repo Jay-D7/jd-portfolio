@@ -1,10 +1,11 @@
-import './App.scss';
-import { Layout } from './components/Layout/Layout';
-import { Home } from './components/Home/Home';
-import { About } from './components/About/About';
-import { Portfolio } from './components/Portfolio/Portfolio';
-import { Contact } from './components/Contact/Contact';
 import { Route, Routes } from 'react-router-dom';
+
+import './App.scss';
+import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
+import { Home } from './components/Home/Home';
+import { Layout } from './components/Layout/Layout';
+import { Portfolio } from './components/Portfolio/Portfolio';
 
 export function App() {
   return (

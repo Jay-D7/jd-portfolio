@@ -1,6 +1,6 @@
 @use '../../../styles/variables';
 
-.logoContainer {
+.logo-container {
   position: relative; /* Ensure proper positioning for child elements */
   width: 400px;
   height: 609px;
@@ -28,4 +28,10 @@
 .svgContainer {
   stroke: variables.$hover-color;
   stroke-width: 10;
+}
+
+@media screen and (max-width: 1000px) {
+  .logo-container {
+    display: none;
+  }
 }

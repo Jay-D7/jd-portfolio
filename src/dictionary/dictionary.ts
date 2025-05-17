@@ -18,7 +18,7 @@ export const dictionary = {
   projectFirst: 'Porfolio first build & vite migration',
   portfolioDescription: `Developed the first version of my front-end portfolio using HTML, SCSS, and JavaScript, then migrated the project to Vite to improve performance, simplify file structure, and streamline dependency management. Key Aspects:	Initial setup: manual file structure without a bundler Refactored codebase for modularity and reusability Migration to Vite: Configured Vite as the projects bundler `,
 
-  projectSecond: 'Landing Page',
+  projectSecond: 'Landing Page Book Your Trip',
   portfolioDescription2: `Developed a landing page for a fictional company using React, SCSS, and JavaScript. The project showcases my skills in creating responsive and visually appealing web pages. Key Features: Responsive design: Ensured compatibility across various devices and screen sizes. Interactive elements: Incorporated JavaScript for dynamic user interactions. SCSS: Utilized SCSS for modular and maintainable styles.`,
 
   projectThird: 'Project 3',

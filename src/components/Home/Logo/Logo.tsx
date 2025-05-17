@@ -3,7 +3,7 @@ import './Logo.scss';
 
 export const Logo: React.FC = () => {
   return (
-    <div className="logoContainer">
+    <div className="logo-container">
       <img
         className="solid-logo"
         src={logo_small}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './About.scss';
-import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Loader from 'react-loaders';
+
 import {
   faCss3Alt,
   faGitAlt,
@@ -10,8 +9,11 @@ import {
   faReact,
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
-import Loader from 'react-loaders';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { dictionary } from '../../dictionary/dictionary';
+import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
+import './About.scss';
 
 const cubeFaces = [
   { className: 'face1', icon: faSass },
@@ -24,15 +26,33 @@ const cubeFaces = [
 
 export const About: React.FC = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1200);
 
   // const str = `About Me`;
   // const strArray = [...str];
 
   useEffect(() => {
+    console.log('isMobile:', isMobile);
+    // Check if the window width is less than or equal to 768px
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1200);
+    };
+    // Add event listener to handle window resize
+    window.addEventListener('resize', handleResize);
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Set the letter class to 'text-animate-hover' after 2000ms
     const timeoutId = setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 2000);
 
+    // Cleanup function to clear the timeout
+    // This is important to avoid memory leaks and unexpected behavior
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -64,13 +84,24 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="cube-spinner">
+            {/* {isMobile ? ( */}
+            {/* // Change the class name to 'cube-spinner-mobile' for mobile view */}
+            <div className={isMobile ? 'cube-spinner-mobile' : 'cube-spinner'}>
               {cubeFaces.map((face, index) => (
                 <div key={index} className={face.className}>
                   <FontAwesomeIcon icon={face.icon} />
                 </div>
               ))}
             </div>
+            {/* ) : ( */}
+            {/* <div className="cube-spinner">
+                {cubeFaces.map((face, index) => (
+                  <div key={index} className={face.className}>
+                    <FontAwesomeIcon icon={face.icon} />
+                  </div>
+                ))}
+              </div> */}
+            {/* )} */}
           </div>
         </div>
       </div>

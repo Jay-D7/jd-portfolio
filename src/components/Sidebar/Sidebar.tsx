@@ -1,24 +1,26 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import '../../App.scss';
-import './Sidebar.scss';
-import LogoJD from '../../assets/images/golden_white_logo.png';
-import LogoSubtitle from '../../assets/images/logo_sub_jd.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHome,
-  faUser,
-  faSuitcase,
-  faEnvelope,
-  faBars,
-  faClose,
-} from '@fortawesome/free-solid-svg-icons';
+
 import {
   faGithub,
   faLinkedin,
   faSlack,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import { useState } from 'react';
+import {
+  faBars,
+  faClose,
+  faEnvelope,
+  faHome,
+  faSuitcase,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import '../../App.scss';
+import LogoJD from '../../assets/images/golden_white_logo.png';
+import LogoSubtitle from '../../assets/images/logo_sub_jd.png';
+import './Sidebar.scss';
 
 // / NavLinks
 const navLinks = [
@@ -64,6 +66,7 @@ const socialLinks = [
 
 export const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
+
   const getNavLinkClass = (isActive: boolean, baseClass: string) => {
     return `${isActive ? isActive + ' ' : ''}${baseClass || baseClass}`;
   };
@@ -80,17 +83,19 @@ export const Sidebar = () => {
       </Link>
       {/* Nav */}
       <nav className={showNav ? 'mobile-show' : ''}>
-        {navLinks.map(({ to, icon, label, className }) => (
-          <NavLink
-            key={to}
-            className={({ isActive }) => getNavLinkClass(isActive, className)}
-            end
-            to={to}
-            onClick={() => setShowNav(false)}
-          >
-            <FontAwesomeIcon icon={icon} aria-label={label} />
-          </NavLink>
-        ))}
+        <div className="nav-links">
+          {navLinks.map(({ to, icon, label, className }) => (
+            <NavLink
+              key={to}
+              className={({ isActive }) => getNavLinkClass(isActive, className)}
+              end
+              to={to}
+              onClick={() => setShowNav(false)}
+            >
+              <FontAwesomeIcon icon={icon} aria-label={label} />
+            </NavLink>
+          ))}
+        </div>
         <FontAwesomeIcon
           onClick={() => setShowNav(false)}
           icon={faClose}

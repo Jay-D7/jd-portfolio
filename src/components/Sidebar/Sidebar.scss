@@ -180,6 +180,12 @@
     height: auto;
     min-height: auto;
 
+    .logo {
+      .sub-logo {
+        display: none;
+      }
+    }
+
     ul,
     nav {
       display: none;
@@ -197,11 +203,14 @@
 
       &.mobile-show {
         display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       a {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
       }
 
@@ -220,8 +229,8 @@
     .hamburger-icon,
     .close-icon {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 30px;
+      right: 20px;
       display: block;
     }
   }

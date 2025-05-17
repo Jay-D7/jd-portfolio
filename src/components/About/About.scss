@@ -175,3 +175,60 @@ $numComet: 10;
     @include shooting-star-template($numComet, 5px, 10s);
   }
 }
+
+@media screen and (max-width: 1201px) {
+  .stage-cube-cont {
+    position: initial;
+    width: variables.$basic-width;
+    height: 0%;
+    overflow: visible;
+    padding-top: 0;
+  }
+}
+
+.cube-spinner-mobile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+  align-items: center;
+  margin: 32px auto;
+  max-width: 300px;
+
+  .face1,
+  .face2,
+  .face3,
+  .face4,
+  .face5,
+  .face6 {
+    background: #1d1d1d;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    font-size: 2.5rem; // Adjust icon size
+    color: #ffd700; // Or your accent color
+  }
+
+  .face1 {
+    color: variables.$sass;
+  }
+  .face2 {
+    color: variables.$HTML5;
+  }
+  .face3 {
+    color: variables.$react;
+  }
+  .face4 {
+    color: variables.$javascript;
+  }
+  .face5 {
+    color: variables.$css3;
+  }
+  .face6 {
+    color: variables.$git;
+  }
+}

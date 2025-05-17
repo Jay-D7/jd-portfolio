@@ -82,6 +82,11 @@ $git: #ec4d28;
   }
 }
 
+// Color of Loader Animation
+.cube-transition > div {
+  background-color: $primary-color;
+}
+
 .loader-hidden {
   display: none;
 }
