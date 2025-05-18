@@ -3,6 +3,14 @@
 .ReactModal__Overlay {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+
+  // opacity: 0;
+  // transition: opacity 1s ease-in-out;
+  // background: rgba(20, 37, 52, 0.92); // matches $background-color-light
+  // z-index: 1000;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .ReactModal__Overlay--after-open {

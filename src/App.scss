@@ -32,6 +32,12 @@ textarea {
   font-family: 'Helvetica Neue';
 }
 
+.scroll-lock {
+  overflow: hidden !important;
+  position: relative;
+  width: 100vw;
+}
+
 @media screen and (max-width: 1200px) {
   .App {
     flex-direction: column;

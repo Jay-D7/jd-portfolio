@@ -39,7 +39,7 @@ $numComet: 10;
       width: 200px;
       height: 200px;
       border: 1px solid #ccc;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgb(255 255 255 / 40%);
       text-align: center;
       font-size: 100px;
       display: flex;
@@ -52,22 +52,27 @@ $numComet: 10;
       transform: translateZ(100px);
       color: variables.$sass;
     }
+
     .face2 {
       transform: rotateY(90deg) translateZ(100px);
       color: variables.$HTML5;
     }
+
     .face3 {
       transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
       color: variables.$react;
     }
+
     .face4 {
       transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
       color: variables.$javascript;
     }
+
     .face5 {
       transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
       color: variables.$css3;
     }
+
     .face6 {
       transform: rotateX(-90deg) translateZ(100px);
       color: variables.$git;
@@ -165,18 +170,21 @@ $numComet: 10;
       variables.$starOneScrollDuration
     );
   }
+
   .stars2 {
     @include star-template($numStarTwoStars, 2px, $starTwoScrollDuration);
   }
+
   .stars3 {
     @include star-template($numStarThreeStars, 3px, $starThreeScrollDuration);
   }
+
   .comet {
     @include shooting-star-template($numComet, 5px, 10s);
   }
 }
 
-@media screen and (max-width: 1201px) {
+@media screen and (width <= 1201px) {
   .stage-cube-cont {
     position: initial;
     width: variables.$basic-width;

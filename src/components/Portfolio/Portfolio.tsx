@@ -4,9 +4,9 @@ import Loader from 'react-loaders';
 import { motion } from 'framer-motion';
 
 import project_2 from '../../assets/images/image2_2.png';
-import project_3 from '../../assets/images/image3.png';
-import project_4 from '../../assets/images/logo_sub_jd.png';
 import project_1 from '../../assets/images/portfolio_jd.png';
+import project_3 from '../../assets/images/project_3.png';
+import project_4 from '../../assets/images/project_4.png';
 import { dictionary } from '../../dictionary/dictionary';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 import { ModalComponent } from './ModalComponent/ModalComponent';
@@ -36,20 +36,21 @@ export const Portfolio = () => {
     },
     {
       id: 3,
-      title: dictionary.projectThird,
+      title: dictionary.project_3,
       description: dictionary.portfolioDescription3,
       image: project_3,
       url: 'https://jay-d7.github.io/beta_project/',
     },
     {
-      id: 3,
-      title: dictionary.projectThird,
-      description: dictionary.portfolioDescription3,
+      id: 4,
+      title: dictionary.project_4,
+      description: dictionary.portfolioDescription4,
       image: project_4,
+      url: 'https://jay-d7.github.io/react-complete-guide-code/',
     },
     {
-      id: 3,
-      title: dictionary.projectThird,
+      id: 5,
+      title: dictionary.project_4,
       description: dictionary.portfolioDescription3,
       image: project_1,
     },
@@ -63,14 +64,25 @@ export const Portfolio = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  const openModal = (project: ModalPropsInterface) => {
-    setSelectedModal(project);
-    setIsOpen(true);
-  };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('scroll-lock');
+    } else {
+      document.body.classList.remove('scroll-lock');
+    }
+    return () => {
+      document.body.classList.remove('scroll-lock');
+    };
+  }, [isOpen]);
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+  // const openModal = (project: ModalPropsInterface) => {
+  //   setSelectedModal(project);
+  //   setIsOpen(true);
+  // };
+
+  // const closeModal = () => {
+  //   setIsOpen(false);
+  // };
 
   return (
     <>
@@ -92,7 +104,7 @@ export const Portfolio = () => {
               className="portfolio-item"
               key={project.id}
               onClick={(e) => {
-                openModal(project);
+                setSelectedModal(project);
                 setIsOpen(true);
                 e.stopPropagation();
               }}
@@ -112,7 +124,9 @@ export const Portfolio = () => {
           {selectedModal && (
             <ModalComponent
               isOpen={isOpen}
-              onClose={closeModal}
+              onClose={() => setIsOpen(false)}
+              // isOpen={!!selectedModal}
+              // onClose={() => setSelectedModal(null)}
               ModalProps={selectedModal}
             />
           )}

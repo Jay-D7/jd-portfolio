@@ -61,11 +61,36 @@
   flex-direction: column;
   width: 90%;
   max-width: 500px;
+  max-height: 75%;
   padding: 20px;
   text-align: center;
   background: white;
   border-radius: 8px;
   z-index: 1100; /* Ensure it's above the overlay */
+  overflow-y: auto;
+
+  // max-width: 540px;
+  // padding: 32px 24px 24px 24px;
+  text-align: center;
+  background: variables.$background-color-light;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(204, 155, 87, 0.25); // $primary-color
+  z-index: 1100;
+
+  h2 {
+    color: variables.$primary-color;
+    font-family: Coolvetica, sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: variables.$fontColor;
+  }
 
   a {
     text-decoration: none;
@@ -76,7 +101,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: variables.$secondary-color;
+      color: variables.$hover-color;
     }
   }
 
@@ -85,6 +110,10 @@
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
+    background: #222;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
   }
 
   button {
@@ -96,12 +125,15 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s ease;
+
     &:hover {
-      background: variables.$secondary-color;
+      background: variables.$hover-color;
     }
+
     &:focus {
       outline: none;
     }
+
     &:active {
       transform: scale(0.98);
     }

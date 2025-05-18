@@ -8,15 +8,15 @@ export const Layout: React.FC = () => {
     <div className="App">
       <Sidebar />
       <div className="page">
-        <span className="tags topTags">
+        <span className="tags top-tags">
           <span>&lt;/html&gt;</span>
-          <span className="bottomTagHtml">&lt;body&gt;</span>
+          <span className="bottom-tag-html">&lt;body&gt;</span>
         </span>
 
         <Outlet />
 
-        <span className="tags bottomTags">
-          <span className="bottomTagHtml">&lt;/body&gt;</span>
+        <span className="tags bottom-tags">
+          <span className="bottom-tag-html">&lt;/body&gt;</span>
           <span>&lt;/html&gt;</span>
         </span>
       </div>

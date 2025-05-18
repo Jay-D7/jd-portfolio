@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
+
 import './ModalComponent.scss';
 
 export interface ModalPropsInterface {
@@ -36,7 +37,7 @@ export const ModalComponent = ({
       <p>{ModalProps.description}</p>
       {ModalProps.url && (
         <Link to={ModalProps.url} target="_blank">
-          This is a link to the Project
+          Link to Project
         </Link>
       )}
       <img src={ModalProps.image} alt={ModalProps.title} />

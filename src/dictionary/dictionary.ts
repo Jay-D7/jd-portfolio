@@ -15,14 +15,19 @@ export const dictionary = {
 
   // Portfolio
   portfolioTitle: 'My Portfolio',
+
+  // PROJECTS
   projectFirst: 'Porfolio first build & vite migration',
-  portfolioDescription: `Developed the first version of my front-end portfolio using HTML, SCSS, and JavaScript, then migrated the project to Vite to improve performance, simplify file structure, and streamline dependency management. Key Aspects:	Initial setup: manual file structure without a bundler Refactored codebase for modularity and reusability Migration to Vite: Configured Vite as the projects bundler `,
+  portfolioDescription: `Developed the first version of my front-end portfolio using REACT, JSX SCSS, and JavaScript, then migrated the project to Vite to improve performance, simplify file structure, and streamline dependency management. Key Aspects:	Initial setup: manual file structure without a bundler Refactored codebase for modularity and reusability Migration to Vite: Configured Vite as the projects bundler `,
 
   projectSecond: 'Landing Page Book Your Trip',
-  portfolioDescription2: `Developed a landing page for a fictional company using React, SCSS, and JavaScript. The project showcases my skills in creating responsive and visually appealing web pages. Key Features: Responsive design: Ensured compatibility across various devices and screen sizes. Interactive elements: Incorporated JavaScript for dynamic user interactions. SCSS: Utilized SCSS for modular and maintainable styles.`,
+  portfolioDescription2: `Developed a landing page for a fictional company using HTML, SCSS, and JavaScript. The project showcases my skills in creating responsive and visually appealing web pages. Key Features: Responsive design: Ensured compatibility across various devices and screen sizes. Interactive elements: SCSS for dynamic user interactions. SCSS: Utilized for modular and maintainable styles.`,
 
-  projectThird: 'Project 3',
-  portfolioDescription3: `Description 3`,
+  project_3: 'Website GTR Edition',
+  portfolioDescription3: `Developed Responsive Landing Page`,
+
+  project_4: 'React App',
+  portfolioDescription4: `Developed React App to Adding Expenses`,
 
   // Contact
   contactTitle: 'Contact me',
