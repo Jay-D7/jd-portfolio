@@ -1,11 +1,13 @@
+import { useEffect, useRef, useState } from 'react';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import Loader from 'react-loaders';
-import './Contact.scss';
-import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
-import { useState, useEffect, useRef } from 'react';
+
 import emailjs from '@emailjs/browser';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { templateId, serviceId, userId } from '../../config/emailjsConfig.ts';
+
+import { serviceId, templateId, userId } from '../../config/emailjsConfig.ts';
 import { dictionary } from '../../dictionary/dictionary.ts';
+import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
+import './Contact.scss';
 
 export const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
