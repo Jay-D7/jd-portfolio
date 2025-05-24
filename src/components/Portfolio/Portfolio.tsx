@@ -7,6 +7,7 @@ import project_2 from '../../assets/images/image2_2.png';
 import project_1 from '../../assets/images/portfolio_jd.png';
 import project_3 from '../../assets/images/project_3.png';
 import project_4 from '../../assets/images/project_4.png';
+import project_5 from '../../assets/images/project_5.png';
 import { dictionary } from '../../dictionary/dictionary';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 import { ModalComponent } from './ModalComponent/ModalComponent';
@@ -22,14 +23,14 @@ export const Portfolio = () => {
   const projects: ModalPropsInterface[] = [
     {
       id: 1,
-      title: dictionary.projectFirst,
+      title: dictionary.project1,
       description: dictionary.portfolioDescription,
       image: project_1,
       url: dictionary.url1,
     },
     {
       id: 2,
-      title: dictionary.projectSecond,
+      title: dictionary.project2,
       description: dictionary.portfolioDescription2,
       image: project_2,
       url: dictionary.url2,
@@ -50,9 +51,10 @@ export const Portfolio = () => {
     },
     {
       id: 5,
-      title: dictionary.project_4,
-      description: dictionary.portfolioDescription3,
-      image: project_1,
+      title: dictionary.project_5,
+      description: dictionary.portfolioDescription5,
+      image: project_5,
+      url: dictionary.url5,
     },
   ];
 
