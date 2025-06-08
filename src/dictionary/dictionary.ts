@@ -1,3 +1,5 @@
+// let idCounter = 1;
+// Add id counter to ensure unique IDs for each project in future
 export const dictionary = {
   // Home
   welcome: 'Hi',
