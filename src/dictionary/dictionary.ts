@@ -1,3 +1,5 @@
+// let idCounter = 1;
+// Add id counter to ensure unique IDs for each project in future
 export const dictionary = {
   // Home
   welcome: 'Hi',
@@ -17,17 +19,29 @@ export const dictionary = {
   portfolioTitle: 'My Portfolio',
 
   // PROJECTS
-  projectFirst: 'Porfolio first build & vite migration',
+  // #1
+  project1: 'Porfolio first build & vite migration',
   portfolioDescription: `Developed the first version of my front-end portfolio using REACT, JSX SCSS, and JavaScript, then migrated the project to Vite to improve performance, simplify file structure, and streamline dependency management. Key Aspects:	Initial setup: manual file structure without a bundler Refactored codebase for modularity and reusability Migration to Vite: Configured Vite as the projects bundler `,
+  url1: 'https://github.com/Jay-D7/react-portfolio',
 
-  projectSecond: 'Landing Page Book Your Trip',
+  // #2
+  project2: 'Landing Page Book Your Trip',
   portfolioDescription2: `Developed a landing page for a fictional company using HTML, SCSS, and JavaScript. The project showcases my skills in creating responsive and visually appealing web pages. Key Features: Responsive design: Ensured compatibility across various devices and screen sizes. Interactive elements: SCSS for dynamic user interactions. SCSS: Utilized for modular and maintainable styles.`,
+  url2: 'https://jay-d7.github.io/website_landing_page/',
 
+  // #3
   project_3: 'Website GTR Edition',
   portfolioDescription3: `Developed Responsive Landing Page`,
+  url3: 'https://jay-d7.github.io/beta_project/',
 
   project_4: 'React App',
   portfolioDescription4: `Developed React App to Adding Expenses`,
+  url4: 'https://jay-d7.github.io/react-complete-guide-code/',
+
+  // #5
+  project_5: 'Shop-list Component',
+  portfolioDescription5: `Developed a shop-list component using React, TypeScript TailWind CSS, and Vite. Implemented address parsing utility. Responsive design and mobile-first approach. Set up testing framework with Vitest and created tests for components. Configured Vite for development and production builds.`,
+  url5: 'https://jay-d7.github.io/shop-component/',
 
   // Contact
   contactTitle: 'Contact me',
