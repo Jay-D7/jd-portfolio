@@ -43,6 +43,11 @@ export const dictionary = {
   portfolioDescription5: `Developed a shop-list component using React, TypeScript TailWind CSS, and Vite. Implemented address parsing utility. Responsive design and mobile-first approach. Set up testing framework with Vitest and created tests for components. Configured Vite for development and production builds.`,
   url5: 'https://jay-d7.github.io/shop-component/',
 
+  // #6
+  project_6: 'Online Store',
+  portfolioDescription6: `Developed an online store using React, TypeScript, and Tailwind CSS. Implemented features such as product listings, shopping cart functionality, and user authentication. Focused on creating a responsive and user-friendly interface.`,
+  url6: 'https://jay-d7.github.io/online-store/',
+
   // Contact
   contactTitle: 'Contact me',
   contactDescription: `I am interested in freelance opportunities - especially on ambitious or large projects. However, if you have any other requests or questions, don't hesitate to contact me using below form either.`,

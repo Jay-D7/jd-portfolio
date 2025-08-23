@@ -8,6 +8,7 @@ import project_1 from '../../assets/images/portfolio_jd.png';
 import project_3 from '../../assets/images/project_3.png';
 import project_4 from '../../assets/images/project_4.png';
 import project_5 from '../../assets/images/project_5.png';
+import project_6 from '../../assets/images/project_6.png';
 import { dictionary } from '../../dictionary/dictionary';
 import { AnimatedLetters } from '../AnimatedLetters/AnimatedLetters';
 import { ModalComponent } from './ModalComponent/ModalComponent';
@@ -55,6 +56,13 @@ export const Portfolio = () => {
       description: dictionary.portfolioDescription5,
       image: project_5,
       url: dictionary.url5,
+    },
+    {
+      id: 6,
+      title: dictionary.project_6,
+      description: dictionary.portfolioDescription6,
+      image: project_6,
+      url: dictionary.url6,
     },
   ];
 
