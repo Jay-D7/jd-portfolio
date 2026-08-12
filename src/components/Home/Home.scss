@@ -13,13 +13,13 @@
 
     h1 {
       margin: 0;
-      font-family: 'Coolvetica';
+      font-family: Coolvetica, sans-serif;
       font-size: 56px;
       font-weight: 400;
       color: variables.$primary-color;
       line-height: 53px;
 
-      &:before {
+      &::before {
         content: '<h1>';
         font-family: 'La Belle Aurore', cursive;
         color: variables.$primary-light;
@@ -30,7 +30,7 @@
         animation: fadeIn 1s 1.7s backwards;
       }
 
-      &:after {
+      &::after {
         content: '<h1/>';
         font-family: 'La Belle Aurore', cursive;
         color: variables.$primary-light;
@@ -86,7 +86,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (width <= 1200px) {
   .home-page {
     flex-direction: column;
     align-items: center;
@@ -98,8 +98,8 @@
         font-size: 40px;
         line-height: 40px;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
           font-size: 14px;
           margin-top: -20px;
           margin-left: -10px;

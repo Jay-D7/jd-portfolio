@@ -85,15 +85,6 @@ export const Portfolio = () => {
     };
   }, [isOpen]);
 
-  // const openModal = (project: ModalPropsInterface) => {
-  //   setSelectedModal(project);
-  //   setIsOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setIsOpen(false);
-  // };
-
   return (
     <>
       <div className="container portfolio-page">
@@ -118,9 +109,9 @@ export const Portfolio = () => {
                 setIsOpen(true);
                 e.stopPropagation();
               }}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ opacity: 0.5, transition: { duration: 0.2 } }}
               whileTap={{ scale: 0.9 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 4.9, opacity: 0 }}
             >
               <img src={project.image} alt={project.title} />
               {/* <h3>{project.title}</h3> */}
@@ -135,8 +126,6 @@ export const Portfolio = () => {
             <ModalComponent
               isOpen={isOpen}
               onClose={() => setIsOpen(false)}
-              // isOpen={!!selectedModal}
-              // onClose={() => setSelectedModal(null)}
               ModalProps={selectedModal}
             />
           )}

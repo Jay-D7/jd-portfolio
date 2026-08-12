@@ -66,7 +66,6 @@
     text-decoration: none;
     padding: 8px 10px;
     border: 1px solid #ffd700;
-    float: left;
     border-radius: 4px;
     background: 0 0;
     text-transform: uppercase;
@@ -84,7 +83,7 @@
 }
 
 .map-wrap {
-  background: rgba(8, 253, 216, 0.1);
+  background: rgb(8 253 216 / 10%);
   float: right;
   width: 53%;
   height: 100%;
@@ -101,19 +100,19 @@
 
 .info-map {
   position: absolute;
-  background: #000;
   top: 50px;
   right: 30px;
-  z-index: 999999;
   width: 267px;
   padding: 20px;
-  color: #fff;
-  font-family: 'Helvetica';
+  font-family: Helvetica, sans-serif;
   font-size: 17px;
   font-weight: 300;
-  opacity: 0;
+  background: #000;
+  color: #fff;
   animation: fadeInRightBig 1.5s 1.2s;
   animation-fill-mode: forwards;
+  z-index: 999999;
+  opacity: 0;
 
   span {
     font-size: 16px;
@@ -124,7 +123,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (width <= 1200px) {
   .map-wrap {
     float: none;
     margin: 0;

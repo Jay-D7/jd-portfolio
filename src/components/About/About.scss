@@ -3,17 +3,67 @@
 @use 'sass:list';
 @use '../../styles/variables';
 
-$starFieldWidth: 2560;
-$starFieldHeight: 2560;
-$starStartOffset: 600px;
+$star-field-width: 2560;
+$star-field-height: 2560;
+$star-start-offset: 600px;
+$star-one-scroll-duration: 100s;
+$star-two-scroll-duration: 125s;
+$star-three-scroll-duration: 175s;
+$num-star-one-stars: 1700;
+$num-star-two-stars: 700;
+$num-star-three-stars: 200;
+$num-comet: 10;
 
-$starOneScrollDuration: 100s;
-$starTwoScrollDuration: 125s;
-$starThreeScrollDuration: 175s;
-$numStarOneStars: 1700;
-$numStarTwoStars: 700;
-$numStarThreeStars: 200;
-$numComet: 10;
+.cube-spinner-mobile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  place-items: center;
+  margin: 32px auto;
+  max-width: 300px;
+
+  .face1,
+  .face2,
+  .face3,
+  .face4,
+  .face5,
+  .face6 {
+    background: #1d1d1d;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    font-size: 2.5rem; // Adjust icon size
+    color: #ffd700; // Or your accent color
+  }
+
+  .face1 {
+    color: variables.$sass;
+  }
+
+  .face2 {
+    color: variables.$html5;
+  }
+
+  .face3 {
+    color: variables.$react;
+  }
+
+  .face4 {
+    color: variables.$javascript;
+  }
+
+  .face5 {
+    color: variables.$css3;
+  }
+
+  .face6 {
+    color: variables.$git;
+  }
+}
 
 .stage-cube-cont {
   width: 50%;
@@ -26,7 +76,7 @@ $numComet: 10;
   overflow: hidden;
 
   .cube-spinner {
-    animation-name: spinCube;
+    animation-name: spin-cube;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-duration: 12s;
@@ -45,7 +95,7 @@ $numComet: 10;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 0 20px 0px lightyellow;
+      box-shadow: 0 0 20px 0 lightyellow;
     }
 
     .face1 {
@@ -55,7 +105,7 @@ $numComet: 10;
 
     .face2 {
       transform: rotateY(90deg) translateZ(100px);
-      color: variables.$HTML5;
+      color: variables.$html5;
     }
 
     .face3 {
@@ -83,44 +133,41 @@ $numComet: 10;
     display: block;
     top: 50%;
     left: 50%;
-    /* position: relative;
-    // width: 1200px;
-    // height: 600px;
-    // background: linear-gradient(to bottom, #201c2f 0%, #100751 100%);
-    // transform: translate(-50%, -50%); */
   }
 
   @function create-stars($n) {
     $stars: ();
 
     @for $i from 1 through $n {
-      $x: math.random($starFieldWidth);
-      $y: math.random($starFieldHeight);
+      $x: math.random($star-field-width);
+      $y: math.random($star-field-height);
       $stars: list.append($stars, #{$x}px #{$y}px #fff, comma);
     }
 
-    @return $stars; /* No need for unquote() */
+    @return $stars;
   }
 
-  @keyframes animStar {
+  @keyframes anim-star {
     from {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
+
     to {
-      transform: translateY(-#{variables.$starFieldHeight}px)
-        translateX(-#{variables.$starFieldWidth}px);
+      transform: translateY(-#{variables.$star-field-height}px)
+        translateX(-#{variables.$star-field-width}px);
     }
   }
 
-  @keyframes animShootingStar {
+  @keyframes anim-shooting-star {
     from {
-      transform: translateY(0px) translateX(0px) rotate(-45deg);
+      transform: translateY(0) translateX(0) rotate(-45deg);
       opacity: 1;
       height: 5px;
     }
+
     to {
-      transform: translateY(-#{variables.$starFieldHeight}px)
-        translateX(-#{variables.$starFieldWidth}px) rotate(-45deg);
+      transform: translateY(-#{variables.$star-field-height}px)
+        translateX(-#{variables.$star-field-width}px) rotate(-45deg);
       opacity: 1;
       height: 800px;
     }
@@ -133,10 +180,11 @@ $numComet: 10;
     border-radius: 50%;
     background: transparent;
     box-shadow: create-stars($numStars);
-    animation: animStar $scrollSpeed linear infinite;
-    &:after {
+    animation: anim-star $scrollSpeed linear infinite;
+
+    &::after {
       content: ' ';
-      top: -$starStartOffset;
+      top: -$star-start-offset;
       width: $starSize;
       height: $starSize;
       border-radius: 50%;
@@ -157,30 +205,34 @@ $numComet: 10;
     right: 0;
     background: linear-gradient(
       to top,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
+      rgb(255 255 255 / 0%),
+      rgb(255 255 255 / 10%)
     );
-    animation: animShootingStar $speed linear infinite;
+    animation: anim-shooting-star $speed linear infinite;
   }
 
   .stars {
     @include star-template(
-      variables.$numStarOneStars,
+      variables.$num-star-one-stars,
       1px,
-      variables.$starOneScrollDuration
+      variables.$star-one-scroll-duration
     );
   }
 
   .stars2 {
-    @include star-template($numStarTwoStars, 2px, $starTwoScrollDuration);
+    @include star-template($num-star-one-stars, 2px, $star-two-scroll-duration);
   }
 
   .stars3 {
-    @include star-template($numStarThreeStars, 3px, $starThreeScrollDuration);
+    @include star-template(
+      $num-star-three-stars,
+      3px,
+      $star-three-scroll-duration
+    );
   }
 
   .comet {
-    @include shooting-star-template($numComet, 5px, 10s);
+    @include shooting-star-template($num-comet, 5px, 10s);
   }
 }
 
@@ -191,52 +243,5 @@ $numComet: 10;
     height: 0%;
     overflow: visible;
     padding-top: 0;
-  }
-}
-
-.cube-spinner-mobile {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  justify-items: center;
-  align-items: center;
-  margin: 32px auto;
-  max-width: 300px;
-
-  .face1,
-  .face2,
-  .face3,
-  .face4,
-  .face5,
-  .face6 {
-    background: #1d1d1d;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    padding: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s;
-    font-size: 2.5rem; // Adjust icon size
-    color: #ffd700; // Or your accent color
-  }
-
-  .face1 {
-    color: variables.$sass;
-  }
-  .face2 {
-    color: variables.$HTML5;
-  }
-  .face3 {
-    color: variables.$react;
-  }
-  .face4 {
-    color: variables.$javascript;
-  }
-  .face5 {
-    color: variables.$css3;
-  }
-  .face6 {
-    color: variables.$git;
   }
 }

@@ -1,68 +1,14 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import {
-  faGithub,
-  faLinkedin,
-  faSlack,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faBars,
-  faClose,
-  faEnvelope,
-  faHome,
-  faSuitcase,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../App.scss';
 import LogoJD from '../../assets/images/golden_white_logo.png';
 import LogoSubtitle from '../../assets/images/logo_sub_jd.png';
+import { navLinks, socialLinks } from '../../utils/sidebarNavigation';
 import './Sidebar.scss';
-
-// / NavLinks
-const navLinks = [
-  { to: '/', icon: faHome, label: 'Home', className: '/' },
-  { to: '/about', icon: faUser, label: 'About', className: 'about-link' },
-  {
-    to: '/portfolio',
-    icon: faSuitcase,
-    label: 'Portfolio',
-    className: 'portfolio-link',
-  },
-  {
-    to: '/contact',
-    icon: faEnvelope,
-    label: 'Contact',
-    className: 'contact-link',
-  },
-];
-
-//SocialLinks
-const socialLinks = [
-  {
-    href: 'https://www.linkedin.com/in/dragowskijakub/',
-    icon: faLinkedin,
-    label: 'LinkedIn',
-  },
-  {
-    href: 'https://github.com/Jay-D7',
-    icon: faGithub,
-    label: 'GitHub',
-  },
-  {
-    href: 'https://www.youtube.com',
-    icon: faYoutube,
-    label: 'YouTube',
-  },
-  {
-    href: 'https://mr-robot-network.slack.com',
-    icon: faSlack,
-    label: 'Slack',
-  },
-];
 
 export const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -111,7 +57,7 @@ export const Sidebar = () => {
             <a
               href={href}
               target="_blank"
-              rel="noreferrer noopenner"
+              rel="noreferrer noopener"
               aria-label={label}
               title={label}
             >

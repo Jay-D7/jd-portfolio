@@ -1,7 +1,7 @@
 @import 'animate.css';
-@import 'loaders.css/src/animations/cube-transition.scss';
+@import 'loaders.css/src/animations/cube-transition';
 
-.App {
+.app {
   display: flex;
   height: 100vh;
 }
@@ -21,7 +21,7 @@
 }
 
 @font-face {
-  font-family: 'Coolvetica';
+  font-family: Coolvetica;
   src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
@@ -29,7 +29,7 @@
 
 input,
 textarea {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .scroll-lock {
@@ -38,9 +38,8 @@ textarea {
   width: 100vw;
 }
 
-@media screen and (max-width: 1200px) {
-  .App {
+@media screen and (width <= 1200px) {
+  .app {
     flex-direction: column;
-    // height: auto;
   }
 }

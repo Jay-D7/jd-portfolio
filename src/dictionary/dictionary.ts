@@ -20,9 +20,9 @@ export const dictionary = {
 
   // PROJECTS
   // #1
-  project1: 'Porfolio first build & vite migration',
+  project1: 'Portfolio first build & vite migration',
   portfolioDescription: `Developed the first version of my front-end portfolio using REACT, JSX SCSS, and JavaScript, then migrated the project to Vite to improve performance, simplify file structure, and streamline dependency management. Key Aspects:	Initial setup: manual file structure without a bundler Refactored codebase for modularity and reusability Migration to Vite: Configured Vite as the projects bundler `,
-  url1: 'https://github.com/Jay-D7/react-portfolio',
+  url1: 'https://github.com/Jay-D7/jd-portfolio',
 
   // #2
   project2: 'Landing Page Book Your Trip',
