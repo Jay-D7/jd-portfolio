@@ -17,6 +17,8 @@ export const Sidebar = () => {
     return `${isActive ? isActive + ' ' : ''}${baseClass || baseClass}`;
   };
 
+  const toggleNav = () => setShowNav((prevState) => !prevState);
+
   return (
     <div className="nav-bar">
       <Link className="logo" to="/">
@@ -42,13 +44,6 @@ export const Sidebar = () => {
             </NavLink>
           ))}
         </div>
-        <FontAwesomeIcon
-          onClick={() => setShowNav(false)}
-          icon={faClose}
-          color="#ffd700"
-          size="3x"
-          className="close-icon"
-        />
       </nav>
       {/* SocialLinks */}
       <ul className="social-links">
@@ -71,13 +66,12 @@ export const Sidebar = () => {
       </ul>
       {/* Hamburger Menu */}
       <FontAwesomeIcon
-        onClick={() => setShowNav(!showNav)}
-        icon={faBars}
-        className="hamburger-icon"
-        aria-label="Hamburger Menu"
-        title="Hamburger Menu"
+        onClick={toggleNav}
+        icon={showNav ? faClose : faBars}
+        className={`hamburger-icon ${showNav ? 'is-open' : ''}`}
+        aria-label={showNav ? 'Close Menu' : 'Hamburger Menu'}
+        title={showNav ? 'Close Menu' : 'Hamburger Menu'}
         size="3x"
-        color="#4d4d4e"
       />
     </div>
   );

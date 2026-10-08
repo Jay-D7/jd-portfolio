@@ -17,9 +17,8 @@
   justify-content: space-between;
   width: variables.$basic-width;
   padding-left: 20px;
-  flex: 1; /* Allow the main content to grow and fill available space */
-  // overflow: auto; /* Enable scrolling if content overflows */
-  position: relative; /* Ensure proper stacking context */
+  flex: 1;
+  position: relative;
 
   .tags {
     display: grid;
@@ -48,11 +47,9 @@
 .portfolio-page {
   display: flex;
   justify-content: flex-start;
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
+  align-items: center;
+  height: 100vh;
   flex-direction: row;
-
-  /* width: 100%; */
   overflow: hidden;
 
   .text-zone {
@@ -135,7 +132,7 @@
 }
 
 .contact-page {
-  position: absolute; /* Position Contact absolutely */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

@@ -84,11 +84,11 @@
 .portfolio-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgb(0 0 0 / 80%); /* Dimmed background */
+  background: rgb(0 0 0 / 80%);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
 }
 
 .portfolio-grid {
@@ -143,5 +143,19 @@
 @media screen and (width <= 1200px) {
   .portfolio-grid {
     margin-right: 0;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    .portfolio-item {
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+
+  .portfolio-page {
+    justify-content: center;
+    align-items: center;
   }
 }
