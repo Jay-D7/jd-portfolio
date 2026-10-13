@@ -31,7 +31,7 @@ export const ModalComponent = ({
       onRequestClose={onClose}
       className="portfolio-modal"
       overlayClassName="portfolio-modal-overlay"
-      closeTimeoutMS={1000}
+      closeTimeoutMS={400}
     >
       <h2>{ModalProps.title}</h2>
       <p>{ModalProps.description}</p>
