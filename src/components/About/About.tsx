@@ -46,7 +46,6 @@ export const About: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Set the letter class to 'text-animate-hover' after 2000ms
     const timeoutId = setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 2000);
@@ -84,8 +83,6 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            {/* {isMobile ? ( */}
-            {/* // Change the class name to 'cube-spinner-mobile' for mobile view */}
             <div className={isMobile ? 'cube-spinner-mobile' : 'cube-spinner'}>
               {cubeFaces.map((face, index) => (
                 <div key={index} className={face.className}>
@@ -93,15 +90,6 @@ export const About: React.FC = () => {
                 </div>
               ))}
             </div>
-            {/* ) : ( */}
-            {/* <div className="cube-spinner">
-                {cubeFaces.map((face, index) => (
-                  <div key={index} className={face.className}>
-                    <FontAwesomeIcon icon={face.icon} />
-                  </div>
-                ))}
-              </div> */}
-            {/* )} */}
           </div>
         </div>
       </div>
