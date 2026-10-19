@@ -34,8 +34,9 @@ textarea {
 
 .scroll-lock {
   overflow: hidden !important;
-  position: relative;
-  width: 100vw;
+
+  // position: relative;
+  // width: 100vw;
 }
 
 @media screen and (width <= 1200px) {

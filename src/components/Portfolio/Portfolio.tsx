@@ -75,14 +75,9 @@ export const Portfolio = () => {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('scroll-lock');
-    } else {
-      document.body.classList.remove('scroll-lock');
-    }
-    return () => {
-      document.body.classList.remove('scroll-lock');
-    };
+    document.body.classList.toggle('scroll-lock', isOpen);
+
+    return () => document.body.classList.remove('scroll-lock');
   }, [isOpen]);
 
   return (
