@@ -1,7 +1,8 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  /* overflow-y: scroll; */
 }
 
 body {
