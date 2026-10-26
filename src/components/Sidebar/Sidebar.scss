@@ -97,20 +97,19 @@
     content: 'PORTFOLIO';
   }
 
-  nav a.active svg {
-    color: variables.$hover-color;
-  }
-
+  nav a.active,
   nav a:hover {
     color: variables.$hover-color;
     background-color: variables.$background-color-light;
   }
 
+  nav a.active svg,
   nav a:hover svg {
     opacity: 0;
     transition: all 0.3s ease-out;
   }
 
+  nav a.active::after,
   nav a:hover::after {
     opacity: 1;
   }

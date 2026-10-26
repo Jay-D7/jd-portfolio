@@ -14,7 +14,7 @@ export const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
 
   const getNavLinkClass = (isActive: boolean, baseClass: string) => {
-    return `${isActive ? isActive + ' ' : ''}${baseClass || baseClass}`;
+    return `${isActive ? 'active ' : ''}${baseClass}`;
   };
 
   const toggleNav = () => setShowNav((prevState) => !prevState);
